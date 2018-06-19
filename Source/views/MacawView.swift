@@ -69,6 +69,14 @@ open class MacawView: MView, MGestureRecognizerDelegate {
 
         animationProducer.addStoredAnimations(node)
     }
+    
+    override open var transform: CGAffineTransform
+        {
+        didSet {
+            node.place = transform.toMacaw()
+            setNeedsDisplay()
+        }
+    }
 
     private let layoutHelper = LayoutHelper()
 

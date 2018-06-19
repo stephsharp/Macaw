@@ -62,6 +62,13 @@ public extension LineCap {
 
 }
 
+public extension CGAffineTransform {
+    
+    public func toMacaw() -> Transform {
+        return Transform(m11: Double(self.a), m12: Double(self.b), m21: Double(self.c), m22: Double(self.d), dx: Double(self.tx), dy: Double(self.ty))
+    }
+}
+
 public extension Rect {
 
     public func toCG() -> CGRect {
